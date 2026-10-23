@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 380" fill="none">
+  <defs>
+    <linearGradient id="bgMezcal" x1="0" y1="0" x2="280" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#19231B"/>
+      <stop offset="100%" stop-color="#0B0F0C"/>
+    </linearGradient>
+    <linearGradient id="liqMezcal" x1="80" y1="120" x2="200" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ECFDF5" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#A7F3D0" stop-opacity="0.58"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="380" rx="18" fill="url(#bgMezcal)"/>
+  <circle cx="140" cy="195" r="105" fill="#10B981" opacity="0.1"/>
+  <rect x="118" y="34" width="44" height="22" rx="4" fill="#78350F"/>
+  <rect x="125" y="56" width="30" height="36" fill="#D1FAE5" opacity="0.7"/>
+  <path d="M125 92 Q82 116 84 156 L86 320 Q86 338 106 338 L174 338 Q194 338 194 320 L196 156 Q198 116 155 92 Z" fill="url(#liqMezcal)" stroke="#6EE7B7" stroke-width="2.5"/>
+  <rect x="94" y="168" width="92" height="116" rx="6" fill="#0F1712" stroke="#10B981" stroke-width="1.8"/>
+  <text x="140" y="194" text-anchor="middle" fill="#6EE7B7" font-family="Georgia, serif" font-size="10.5" letter-spacing="2">G&amp;J OAXACA</text>
+  <text x="140" y="218" text-anchor="middle" fill="#ECFDF5" font-family="Georgia, serif" font-weight="bold" font-size="15">MEZCAL</text>
+  <text x="140" y="236" text-anchor="middle" fill="#A7F3D0" font-family="sans-serif" font-size="9" letter-spacing="1.1">ARTESANAL 100% MAGUEY</text>
+  <line x1="110" y1="248" x2="170" y2="248" stroke="#10B981" stroke-width="1"/>
+  <text x="140" y="268" text-anchor="middle" fill="#D1FAE5" font-family="sans-serif" font-size="8.5">NOM-070 · HORNO DE PIEDRA</text>
+</svg>

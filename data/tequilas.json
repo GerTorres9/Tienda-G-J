@@ -1,0 +1,198 @@
+{
+  "tienda": {
+    "nombre": "Casa Tequilera & Mezcalera G&J",
+    "subtitulo": "Tequila 100% Agave Azul Envasado de Origen (NOM 1548 CRT) & Mezcal Artesanal (NOM-070)",
+    "moneda": "MXN",
+    "ivaPorcentaje": 0.16,
+    "envioGratisDesde": 2500
+  },
+  "categorias": [
+    { "id": "todos", "etiqueta": "Todas las Etiquetas" },
+    { "id": "Blanco", "etiqueta": "Tequila Blanco" },
+    { "id": "Reposado", "etiqueta": "Tequila Reposado" },
+    { "id": "Añejo", "etiqueta": "Tequila Añejo" },
+    { "id": "Extra Añejo", "etiqueta": "Tequila Extra Añejo" },
+    { "id": "Cristalino", "etiqueta": "Tequila Cristalino" },
+    { "id": "Mezcal", "etiqueta": "Mezcal Artesanal" }
+  ],
+  "cuponesDescuento": [
+    {
+      "codigo": "AGAVE10",
+      "porcentaje": 10,
+      "descripcion": "10% de descuento en toda la reserva Envasada de Origen"
+    },
+    {
+      "codigo": "NOM15",
+      "porcentaje": 15,
+      "descripcion": "15% de descuento especial Denominación de Origen"
+    },
+    {
+      "codigo": "CAVA20",
+      "porcentaje": 20,
+      "descripcion": "20% de descuento en compra de cava seleccionada"
+    }
+  ],
+  "opcionesEnvio": [
+    {
+      "id": "estandar",
+      "nombre": "Envío Estándar Botella Sellada de Origen (3 a 5 días hábiles)",
+      "costo": 180
+    },
+    {
+      "id": "express",
+      "nombre": "Envío Express Embalaje de Seguridad (24 a 48 hrs)",
+      "costo": 320
+    },
+    {
+      "id": "destileria",
+      "nombre": "Recolección en Destilería G&J — Jalisco (Sin costo)",
+      "costo": 0
+    }
+  ],
+  "productos": [
+    {
+      "id": "teq-01",
+      "nombre": "G&J Tequila Blanco 100% Agave",
+      "categoria": "Blanco",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Los Altos de Jalisco, México",
+      "graduacionAlcoholica": 38,
+      "volumenMl": 750,
+      "proceso": "100% Agave Azul Tequilana Weber (sin azúcares de caña). Cocción en horno de mampostería, doble destilación en cobre y envasado de origen (prohibido a granel por la NOM).",
+      "notasCata": "Agave azul cocido, notas cítricas de lima y toronja, pimienta blanca y final herbal fresco.",
+      "maridaje": "Ceviches frescos, aguachile verde y mariscos a las brasas.",
+      "precio": 790,
+      "stock": 18,
+      "destacado": false,
+      "imagen": "./assets/tequila-blanco.svg"
+    },
+    {
+      "id": "teq-02",
+      "nombre": "G&J Tequila Blanco Tahona 42°",
+      "categoria": "Blanco",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Valle de Tequila, Jalisco, México",
+      "graduacionAlcoholica": 42,
+      "volumenMl": 750,
+      "proceso": "Molienda tradicional en piedra volcánica Tahona, fermentación 100% agave y envasado de origen en la destilería.",
+      "notasCata": "Intensa expresión de agave horneado, mineralidad de tierra húmeda, anís y cítricos brillantes.",
+      "maridaje": "Ostiones frescos, pulpo a las brasas y quesos de cabra.",
+      "precio": 960,
+      "stock": 14,
+      "destacado": true,
+      "imagen": "./assets/tequila-blanco.svg"
+    },
+    {
+      "id": "teq-03",
+      "nombre": "G&J Tequila Reposado Barrica de Roble",
+      "categoria": "Reposado",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Tepatitlán, Los Altos de Jalisco, México",
+      "graduacionAlcoholica": 38,
+      "volumenMl": 750,
+      "proceso": "100% Agave Azul madurado 8 meses en barricas de roble blanco americano y envasado de origen con marbete oficial.",
+      "notasCata": "Equilibrio entre agave cocido, vainilla natural, miel de agave, caramelo ligero y canela.",
+      "maridaje": "Cortes de carne al carbón, birria tradicional y postres de cajeta.",
+      "precio": 1050,
+      "stock": 16,
+      "destacado": true,
+      "imagen": "./assets/tequila-reposado.svg"
+    },
+    {
+      "id": "teq-04",
+      "nombre": "G&J Tequila Reposado Doble Roble",
+      "categoria": "Reposado",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Arandas, Los Altos de Jalisco, México",
+      "graduacionAlcoholica": 40,
+      "volumenMl": 750,
+      "proceso": "Madurado 10 meses en roble americano, afinado en encino francés y envasado de origen en Jalisco.",
+      "notasCata": "Avellana tostada, mantequilla, especias cálidas, madera suave y agave maduro.",
+      "maridaje": "Cochinita pibil, costillas glaseadas y quesos semicurados.",
+      "precio": 1240,
+      "stock": 11,
+      "destacado": false,
+      "imagen": "./assets/tequila-reposado.svg"
+    },
+    {
+      "id": "teq-05",
+      "nombre": "G&J Tequila Añejo Imperial 24 Meses",
+      "categoria": "Añejo",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Atotonilco el Alto, Jalisco, México",
+      "graduacionAlcoholica": 40,
+      "volumenMl": 750,
+      "proceso": "Añejado durante 24 meses en barricas de roble blanco ex-bourbon de 200 litros y envasado de origen.",
+      "notasCata": "Tono ámbar profundo, frutos secos, cacao tostado, roble especiado, vainilla y final sedoso.",
+      "maridaje": "Mole negro tradicional, cortes madurados y chocolate amargo 70% cacao.",
+      "precio": 1520,
+      "stock": 12,
+      "destacado": true,
+      "imagen": "./assets/tequila-anejo.svg"
+    },
+    {
+      "id": "teq-06",
+      "nombre": "G&J Tequila Añejo Cristalino Diamante",
+      "categoria": "Cristalino",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Arandas, Los Altos de Jalisco, México",
+      "graduacionAlcoholica": 38,
+      "volumenMl": 750,
+      "proceso": "Tequila Añejo de 18 meses en barrica de roble, filtrado en carbón activado para retirar el tono oscuro y envasado de origen.",
+      "notasCata": "Brillantez cristalina con cuerpo sedoso; notas de miel, vainilla, avellana, dátil y agave cocido.",
+      "maridaje": "Atún sellado, salmón glaseado y degustación en copa.",
+      "precio": 1690,
+      "stock": 10,
+      "destacado": true,
+      "imagen": "./assets/tequila-cristalino.svg"
+    },
+    {
+      "id": "teq-07",
+      "nombre": "G&J Tequila Extra Añejo Gran Reserva 5 Años",
+      "categoria": "Extra Añejo",
+      "nom": "NOM 1548 CRT · Envasado de Origen",
+      "denominacionOrigen": "Arandas, Los Altos de Jalisco, México",
+      "graduacionAlcoholica": 40,
+      "volumenMl": 750,
+      "proceso": "Madurado 60 meses (5 años) en barricas de roble francés Limousin de 200 L y envasado de origen en botella numerada.",
+      "notasCata": "Higos secos, tabaco dulce, café tostado, madera noble, nuez moscada y caramelo oscuro prolongado.",
+      "maridaje": "Degustación derecha, quesos añejos y trufas de cacao.",
+      "precio": 2950,
+      "stock": 6,
+      "destacado": true,
+      "imagen": "./assets/tequila-extra-anejo.svg"
+    },
+    {
+      "id": "mez-01",
+      "nombre": "G&J Mezcal Artesanal Espadín Joven",
+      "categoria": "Mezcal",
+      "nom": "NOM-070 · Envasado de Origen",
+      "denominacionOrigen": "Santiago Matatlán, Oaxaca, México",
+      "graduacionAlcoholica": 45,
+      "volumenMl": 750,
+      "proceso": "100% Maguey Espadín. Cocción en horno cónico de piedra con leña de encino, molienda en tahona y envasado de origen en Oaxaca.",
+      "notasCata": "Ahumado elegante y equilibrado, notas herbales, tierra mojada, cítricos asados y final mineral.",
+      "maridaje": "Tlayudas oaxaqueñas, chapulines, quesillo y rodajas de naranja con sal de gusano.",
+      "precio": 980,
+      "stock": 14,
+      "destacado": true,
+      "imagen": "./assets/mezcal-artesanal.svg"
+    },
+    {
+      "id": "mez-02",
+      "nombre": "G&J Mezcal Ancestral Tobalá Silvestre",
+      "categoria": "Mezcal",
+      "nom": "NOM-070 · Envasado de Origen",
+      "denominacionOrigen": "Sola de Vega, Oaxaca, México",
+      "graduacionAlcoholica": 48,
+      "volumenMl": 750,
+      "proceso": "100% Maguey Tobalá silvestre de altura. Cocción bajo tierra, molienda a mazo y doble destilación en olla de barro.",
+      "notasCata": "Complejidad floral y frutal de mango verde, humo delicado, barro húmedo, copal y final largo aterciopelado.",
+      "maridaje": "Degustación derecha en jícara o veladora, mole coloradito y cacao criollo.",
+      "precio": 2150,
+      "stock": 7,
+      "destacado": true,
+      "imagen": "./assets/mezcal-artesanal.svg"
+    }
+  ]
+}

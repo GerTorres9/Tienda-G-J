@@ -3,12 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Promedios - Pre-Entrega 2</title>
+    <title>Casa Tequilera G&amp;J — Tequila 100% de Agave · Denominación de Origen</title>
+
+    <!-- Estilos de librería Toastify y estilos propios -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Librerías externas (SweetAlert2 y Toastify) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
+    <!-- Módulos JavaScript de la aplicación con atributo defer obligatorio -->
+    <script src="./js/catalogo.js" defer></script>
+    <script src="./js/carrito.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 <body>
-    <h1>Simulador: Calculadora de Promedios</h1>
-    <p>El programa se está ejecutando en ventanas emergentes.</p>
-    <p>👉 <strong>Importante:</strong> Abre la consola de tu navegador (Presionando F12 o Click Derecho -> Inspeccionar -> Consola) para ver el registro detallado.</p>
+    <header class="encabezado-sitio">
+        <div class="contenedor-principal barra-navegacion">
+            <div class="marca-identidad">
+                <img src="./assets/logo-gj.svg" alt="Emblema Casa Tequilera G&J" class="logo-marca">
+                <div>
+                    <h1 class="marca-titulo">Casa Tequilera G&amp;J</h1>
+                    <p class="marca-subtitulo">Tequila 100% de Agave Azul · Denominación de Origen · NOM 1548 CRT</p>
+                </div>
+            </div>
+            <nav class="acciones-navegacion">
+                <a href="#seccion-catalogo-principal" class="enlace-nav">Catálogo NOM</a>
+                <a href="#seccion-historial-ordenes" class="enlace-nav">Mis Pedidos</a>
+                <button type="button" id="boton-abrir-carrito" class="boton-cava-carrito">
+                    <span>Mi Cava</span>
+                    <span id="insignia-cantidad-carrito" class="insignia-carrito">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-tequilera">
+            <div class="contenedor-principal hero-contenido">
+                <span class="insignia-nom">Denominación de Origen Protegida · NOM 1548 CRT &amp; NOM-070</span>
+                <h2 class="hero-titulo">Reserva de Tequila 100% de Agave Azul y Mezcal Artesanal</h2>
+                <p class="hero-descripcion">
+                    En <strong>Casa Tequilera G&amp;J</strong> comercializamos únicamente <strong>Tequila 100% de Agave Azul 100% Jalisco</strong> y <strong>Mezcales Artesanales 100% Maguey</strong>. Conforme a la <strong>NOM</strong>, el Tequila 100% de Agave es envasado de origen.
+                </p>
+                <div class="guia-clases-nom">
+                    <div class="item-guia-clase">
+                        <strong>Blanco y Reposado</strong>
+                        100% Agave Azul: desde la expresión pura recién destilada hasta el reposo de 2 a 11 meses en roble.
+                    </div>
+                    <div class="item-guia-clase">
+                        <strong>Añejo y Extra Añejo</strong>
+                        Crianza de 1 a 5 años en barricas de roble blanco y francés Limousin de 200 L.
+                    </div>
+                    <div class="item-guia-clase">
+                        <strong>Estilo Cristalino</strong>
+                        Tequila Añejo filtrado en carbón activado para retirar el tono oscuro de la barrica y volverlo cristalino.
+                    </div>
+                    <div class="item-guia-clase">
+                        <strong>Mezcal (NOM-070)</strong>
+                        100% Maguey Espadín y Tobalá silvestre cocido en horno de piedra bajo tierra y destilado en cobre o barro.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seccion-catalogo-principal" class="seccion-catalogo contenedor-principal">
+            <div class="panel-controles-catalogo">
+                <div id="contenedor-filtros-categoria" class="chips-categorias"></div>
+                <div class="fila-busqueda-orden">
+                    <input
+                        type="search"
+                        id="input-busqueda-tequila"
+                        class="input-texto"
+                        placeholder="Buscar por clase (Blanco, Reposado, Añejo, Extra Añejo, Cristalino), región o notas de cata..."
+                    >
+                    <select id="select-orden-catalogo" class="select-control">
+                        <option value="destacados">Ordenar por: Reserva Selecta</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="nombre-asc">Nombre: A - Z</option>
+                        <option value="graduacion-desc">Mayor Graduación Alcohólica</option>
+                    </select>
+                    <label class="etiqueta-check-destacados">
+                        <input type="checkbox" id="check-solo-destacados">
+                        <span>Solo Reserva Selecta</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="barra-estado-resultados">
+                <span id="contador-resultados-catalogo">Cargando etiquetas certificadas...</span>
+                <span>Envío asegurado gratis en compras desde <strong>$2,500.00 MXN</strong></span>
+            </div>
+
+            <div id="estado-carga-catalogo" class="oculto">Cargando catálogo desde base de datos JSON...</div>
+            <div id="estado-error-catalogo" class="oculto"></div>
+            <div id="grilla-productos-tequila" class="grilla-productos"></div>
+        </section>
+
+        <!-- Sección de Confirmación de Compra (Checkout Completo) -->
+        <section id="seccion-checkout-compra" class="seccion-checkout contenedor-principal oculto">
+            <div class="caja-checkout">
+                <h2>Confirmación de Pedido y Datos de Envío</h2>
+                <p class="marca-subtitulo">Completa los datos de entrega para emitir el folio oficial de tu compra.</p>
+                <div class="grilla-checkout">
+                    <form id="formulario-confirmacion-compra" class="grilla-campos-formulario">
+                        <div class="grupo-campo">
+                            <label for="input-nombre-cliente">Nombre completo del titular</label>
+                            <input type="text" id="input-nombre-cliente" class="input-texto" required minlength="3" placeholder="Ej. Gerardo Torres">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="input-correo-cliente">Correo electrónico</label>
+                            <input type="email" id="input-correo-cliente" class="input-texto" required placeholder="cliente@ejemplo.mx">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="input-telefono-cliente">Teléfono de contacto (10 dígitos)</label>
+                            <input type="tel" id="input-telefono-cliente" class="input-texto" required pattern="[0-9]{10}" placeholder="3312345678">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="select-pago-cliente">Método de pago</label>
+                            <select id="select-pago-cliente" class="select-control" required>
+                                <option value="Tarjeta de Crédito / Débito">Tarjeta de Crédito / Débito</option>
+                                <option value="Transferencia SPEI">Transferencia Interbancaria SPEI</option>
+                                <option value="Pago en Destilería">Pago contra entrega en Destilería</option>
+                            </select>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="input-direccion-cliente">Calle, número y colonia</label>
+                            <input type="text" id="input-direccion-cliente" class="input-texto" required minlength="5" placeholder="Av. Vallarta 2440, Col. Arcos">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="input-ciudad-cliente">Ciudad, Estado y Código Postal</label>
+                            <input type="text" id="input-ciudad-cliente" class="input-texto" required minlength="4" placeholder="Guadalajara, Jalisco, C.P. 44130">
+                        </div>
+                        <div class="grupo-campo campo-completo">
+                            <label class="etiqueta-check-destacados">
+                                <input type="checkbox" id="check-mayor-edad" required>
+                                <span>Confirmo que soy mayor de 18 años para la compra de Tequila 100% de Agave.</span>
+                            </label>
+                        </div>
+                        <div class="grupo-campo campo-completo">
+                            <button type="submit" class="boton-dorado">Confirmar y Pagar Pedido</button>
+                            <button type="button" id="boton-cancelar-checkout" class="boton-secundario">Volver al Catálogo</button>
+                        </div>
+                    </form>
+
+                    <div class="resumen-lateral-checkout">
+                        <h3>Resumen de Botellas</h3>
+                        <ul id="resumen-checkout-articulos" class="lista-resumen-checkout"></ul>
+                        <div class="fila-costo total-final">
+                            <span>Total Final (IVA incluido):</span>
+                            <strong id="resumen-checkout-total">$0.00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historial de Pedidos Persistido en localStorage -->
+        <section id="seccion-historial-ordenes" class="seccion-historial contenedor-principal">
+            <div class="caja-historial">
+                <div class="orden-encabezado">
+                    <div>
+                        <h2>Historial de Pedidos Confirmados (localStorage)</h2>
+                        <p class="marca-subtitulo">Tus órdenes se conservan en el navegador incluso al recargar la página.</p>
+                    </div>
+                    <button type="button" id="boton-vaciar-historial" class="boton-secundario oculto">
+                        Limpiar Historial
+                    </button>
+                </div>
+                <div id="contenedor-historial-ordenes"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Drawer Lateral de Carrito -->
+    <div id="fondo-drawer-carrito" class="fondo-drawer"></div>
+    <aside id="panel-drawer-carrito" class="panel-drawer" aria-label="Carrito de compras">
+        <div class="drawer-encabezado">
+            <h3>Mi Cava de Compra</h3>
+            <button type="button" id="boton-cerrar-carrito" class="boton-cerrar-drawer" aria-label="Cerrar carrito">✕</button>
+        </div>
+
+        <div class="bloque-envio-gratis">
+            <p id="mensaje-envio-gratis"></p>
+            <div class="pista-progreso-envio">
+                <div id="barra-progreso-envio" class="barra-progreso"></div>
+            </div>
+        </div>
+
+        <div id="lista-items-carrito" class="lista-items-carrito"></div>
+
+        <div class="drawer-pie">
+            <div class="grupo-campo">
+                <label for="select-metodo-envio">Modalidad de entrega:</label>
+                <select id="select-metodo-envio" class="select-control"></select>
+            </div>
+
+            <div class="fila-cupon">
+                <input type="text" id="input-codigo-cupon" class="input-texto" placeholder="Código cupón (ej. AGAVE10)">
+                <button type="button" id="boton-aplicar-cupon" class="boton-secundario">Aplicar</button>
+            </div>
+            <div id="etiqueta-cupon-activo" class="etiqueta-cupon"></div>
+
+            <div class="desglose-costos">
+                <div class="fila-costo">
+                    <span>Subtotal botellas:</span>
+                    <strong id="resumen-subtotal">$0.00</strong>
+                </div>
+                <div class="fila-costo">
+                    <span>Descuento por cupón:</span>
+                    <strong id="resumen-descuento">-$0.00</strong>
+                </div>
+                <div class="fila-costo">
+                    <span>IVA (16%):</span>
+                    <strong id="resumen-iva">$0.00</strong>
+                </div>
+                <div class="fila-costo">
+                    <span>Costo de envío:</span>
+                    <strong id="resumen-envio">$0.00</strong>
+                </div>
+                <div class="fila-costo total-final">
+                    <span>Total a pagar:</span>
+                    <strong id="resumen-total-pagar">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="acciones-drawer">
+                <button type="button" id="boton-vaciar-carrito" class="boton-secundario">Vaciar</button>
+                <button type="button" id="boton-ir-checkout" class="boton-dorado">Finalizar Compra</button>
+            </div>
+        </div>
+    </aside>
+
+    <footer class="pie-sitio">
+        <p><strong>Casa Tequilera G&amp;J</strong> · Tequila 100% de Agave Azul Tequilana Weber · Denominación de Origen Protegida · NOM 1548 CRT</p>
+        <p>Evita el exceso · Prohibida la venta de alcohol a menores de 18 años.</p>
+    </footer>
 </body>
 </html>
