@@ -64,7 +64,7 @@
       "precio": 790,
       "stock": 18,
       "destacado": false,
-      "imagen": "./assets/tequila-blanco.svg"
+      "imagen": "./assets/tequila-blanco.jpg"
     },
     {
       "id": "teq-02",
@@ -80,7 +80,7 @@
       "precio": 960,
       "stock": 14,
       "destacado": true,
-      "imagen": "./assets/tequila-blanco.svg"
+      "imagen": "./assets/tequila-blanco-tahona.jpg"
     },
     {
       "id": "teq-03",
@@ -96,7 +96,7 @@
       "precio": 1050,
       "stock": 16,
       "destacado": true,
-      "imagen": "./assets/tequila-reposado.svg"
+      "imagen": "./assets/tequila-reposado.jpg"
     },
     {
       "id": "teq-04",
@@ -112,7 +112,7 @@
       "precio": 1240,
       "stock": 11,
       "destacado": false,
-      "imagen": "./assets/tequila-reposado.svg"
+      "imagen": "./assets/tequila-reposado-doble.jpg"
     },
     {
       "id": "teq-05",
@@ -128,7 +128,7 @@
       "precio": 1520,
       "stock": 12,
       "destacado": true,
-      "imagen": "./assets/tequila-anejo.svg"
+      "imagen": "./assets/tequila-anejo.jpg"
     },
     {
       "id": "teq-06",
@@ -144,7 +144,7 @@
       "precio": 1690,
       "stock": 10,
       "destacado": true,
-      "imagen": "./assets/tequila-cristalino.svg"
+      "imagen": "./assets/tequila-cristalino.jpg"
     },
     {
       "id": "teq-07",
@@ -160,7 +160,7 @@
       "precio": 2950,
       "stock": 6,
       "destacado": true,
-      "imagen": "./assets/tequila-extra-anejo.svg"
+      "imagen": "./assets/tequila-extra-anejo.jpg"
     },
     {
       "id": "mez-01",
@@ -176,7 +176,7 @@
       "precio": 980,
       "stock": 14,
       "destacado": true,
-      "imagen": "./assets/mezcal-artesanal.svg"
+      "imagen": "./assets/mezcal-artesanal.jpg"
     },
     {
       "id": "mez-02",
@@ -192,7 +192,7 @@
       "precio": 2150,
       "stock": 7,
       "destacado": true,
-      "imagen": "./assets/mezcal-artesanal.svg"
+      "imagen": "./assets/mezcal-tobala.jpg"
     }
   ]
 }

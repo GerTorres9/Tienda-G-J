@@ -302,22 +302,25 @@ body {
 
 .tarjeta-encabezado-imagen {
     position: relative;
-    background: #10151d;
+    background: #0d1117;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.1rem;
-    height: 245px;
+    padding: 0;
+    height: 310px;
+    overflow: hidden;
 }
 
 .imagen-botella {
-    max-height: 215px;
-    width: auto;
-    transition: transform 0.25s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.35s ease;
 }
 
 .tarjeta-tequila:hover .imagen-botella {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .insignia-clase {
@@ -554,7 +557,9 @@ body {
 .item-carrito-miniatura {
     width: 54px;
     height: 68px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .item-carrito-info h4 {
@@ -758,16 +763,18 @@ body {
 
 .modal-cata-contenido {
     display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 1.2rem;
+    grid-template-columns: 185px 1fr;
+    gap: 1.25rem;
     text-align: left;
     align-items: center;
 }
 
 .modal-cata-imagen {
     width: 100%;
-    max-height: 220px;
-    object-fit: contain;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .modal-cata-detalles p {
